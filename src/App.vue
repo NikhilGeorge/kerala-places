@@ -1,30 +1,40 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <h2>Places Of Kerala</h2>
-      </div>
 
-      <v-spacer></v-spacer>
+ <v-app>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
+    <!-- Sizes your content based upon application components -->
     <v-content>
-      <KeralaMap/>
+
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <!-- If using vue-router -->
+        <v-row
+          align="center"
+          justify="center"
+        >
+          <v-col
+            cols="12"
+            sm="8"
+          >
+            
+             <KeralaMap/>
+          </v-col>
+        </v-row>  
+      </v-container>
     </v-content>
-  </v-app>
+
+    <v-footer app>
+      <!-- -->
+    </v-footer>
+</v-app>
+ 
+ 
+
+           
+
+
+ 
+
 </template>
 
 <script>

@@ -1,54 +1,28 @@
 <template>
-
- <v-app>
-
-    <!-- Sizes your content based upon application components -->
-    <v-content>
-
-      <!-- Provides the application the proper gutter -->
-      <v-container fluid>
-        <!-- If using vue-router -->
-        <v-row
-          align="center"
-          justify="center"
-        >
-          <v-col
-            cols="12"
-            sm="8"
-          >
-            
-             <KeralaMap/>
-          </v-col>
-        </v-row>  
-      </v-container>
-    </v-content>
-
-    <v-footer app>
-      <!-- -->
-    </v-footer>
-</v-app>
- 
- 
-
-           
-
-
- 
-
+  <div id="app">
+    <notifications group="map" />
+    <Home msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
-import KeralaMap from './components/KeralaMap';
+import Home from './views/Home'
 
 export default {
-  name: 'App',
-
+  name: 'app',
   components: {
-    KeralaMap,
-  },
-
-  data: () => ({
-    //
-  }),
-};
+    Home
+  }
+}
 </script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>

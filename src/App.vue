@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-    <notifications group="map" />
-    <Home msg="Welcome to Your Vue.js App"/>
+  <div id="app" dark>
+      <v-container grid-list-md>
+        <router-view></router-view>
+      </v-container>
   </div>
 </template>
 
 <script>
-import Home from './views/Home'
 
 export default {
   name: 'app',
   components: {
-    Home
+    
   }
 }
 </script>

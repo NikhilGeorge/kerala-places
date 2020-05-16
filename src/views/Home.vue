@@ -1,13 +1,20 @@
 <template>
-  <div class="hello">
-    <h1>Austria Map</h1>
-    <p>
-      Please click a state to view state properties
-    </p>
-    <div>
-      <kerala-map-new v-on:map-clicked="onMapClick"></kerala-map-new>
-    </div>
-  </div>
+  <v-layout row wrap>
+    <v-row>
+      <v-col xs="6">
+        <v-card>
+          <h1><span class="map"> Map </span></h1>
+          <kerala-map-new></kerala-map-new>
+        </v-card>
+      </v-col>
+      <v-col xs="6">
+        <v-card color="primary">
+               <h3>{{ $store.state.dist }}</h3>
+              <h4> lat : {{ $store.state.lat }} </h4>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-layout>
 </template>
 
 <script>
@@ -31,3 +38,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .map {
+    color: red;
+    background: rosybrown;
+  }
+</style>

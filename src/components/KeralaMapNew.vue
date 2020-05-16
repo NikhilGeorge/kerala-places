@@ -1,7 +1,6 @@
 <template>
     <div>
-       <h3>{{ $store.state.dist }}</h3>
-       <h4> lat : {{ $store.state.lat }} </h4>
+ 
         <div :id="svgId" class="svg-container"></div>
     </div>
 </template>
@@ -14,10 +13,10 @@
             return {
                 svgId: "keralaMap",
                 mapAttr: {
-                    viewBoxWidth: 1106,
-                    viewBoxHeight: 1500,
-                    imageWidth: 1106,
-                    imageHeight: 800,
+                    viewBoxWidth: 450,
+                    viewBoxHeight: 550,
+                    imageWidth: 200,
+                    imageHeight: 550,
                 },
                 svgContainer: null,
                 currentDist: '',
@@ -30,7 +29,7 @@
             generateVenueMap: function () {
                 const vue = this;
                 const mapData = keralaMap.g
-                const svgContainer = vue.$svg("keralaMap").size('100%', '100%').viewbox(-200, 0, vue.mapAttr.viewBoxWidth, vue.mapAttr.viewBoxHeight);
+                const svgContainer = vue.$svg("keralaMap").size('100%', '100%').viewbox(200, 50, vue.mapAttr.viewBoxWidth, vue.mapAttr.viewBoxHeight);
                 vue.svgContainer = svgContainer;
                 mapData.forEach((pathObj) => {
                     vue.generatePath(svgContainer, pathObj.path);

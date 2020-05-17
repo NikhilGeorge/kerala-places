@@ -1,28 +1,23 @@
 <template>
-  <div id="app" dark>
-      <v-container grid-list-md>
-        <router-view></router-view>
-      </v-container>
-  </div>
+  <v-app>
+    <v-content>
+      <router-view></router-view>
+      <Footer />
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-
+import Footer from './components/Footer'
 export default {
-  name: 'app',
-  components: {
-    
-  }
-}
-</script>
+  name: 'App',
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    Footer,
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>

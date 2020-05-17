@@ -9,7 +9,7 @@ const store = new Vuex.Store({
     state: {
       count: 100,
       places: placesDetaisl,
-      dist: '',
+      dist: 'Please select a district !',
       lat: ''
     },
     mutations: {

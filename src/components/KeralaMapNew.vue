@@ -1,8 +1,7 @@
 <template>
-    <div>
- 
-        <div :id="svgId" class="svg-container"></div>
-    </div>
+    <v-card color="transparent" elevation="0" height="300px">
+         <div :id="svgId" class="svg-container"></div>
+   </v-card>
 </template>
 <script>
 
@@ -14,9 +13,9 @@
                 svgId: "keralaMap",
                 mapAttr: {
                     viewBoxWidth: 450,
-                    viewBoxHeight: 550,
-                    imageWidth: 200,
-                    imageHeight: 550,
+                    viewBoxHeight: 450,
+                    imageWidth: 450,
+                    imageHeight: 450,
                 },
                 svgContainer: null,
                 currentDist: '',
@@ -29,7 +28,7 @@
             generateVenueMap: function () {
                 const vue = this;
                 const mapData = keralaMap.g
-                const svgContainer = vue.$svg("keralaMap").size('100%', '100%').viewbox(200, 50, vue.mapAttr.viewBoxWidth, vue.mapAttr.viewBoxHeight);
+                const svgContainer = vue.$svg("keralaMap").size('100%', '100%').viewbox(200, 75, vue.mapAttr.viewBoxWidth, vue.mapAttr.viewBoxHeight);
                 vue.svgContainer = svgContainer;
                 mapData.forEach((pathObj) => {
                     vue.generatePath(svgContainer, pathObj.path);
@@ -40,7 +39,9 @@
                const vue = this;
                const attrs = {
                    'id': pathObj["@id"],
-                    'fill': pathObj["@fill"],
+                    //'fill': pathObj["@fill"],
+                    'fill': "rgb(117, 9, 9)",
+                    'çlass': ".dist",
                     'stroke-width': pathObj["@stroke-width"],
                     'title': pathObj["-title"],
                     'map-id': pathObj["@id"],
@@ -73,14 +74,14 @@
                     this.$store.commit('setLat', lat);
                    // alert('hover');
                   // console.log(obj);
-                    element.fill({ color: '#ff0000' })
+                    element.animate(180).fill({ color: "rgb(161, 14, 14)" })
                     
                 })
 
                 element.on('mouseout', () =>{
                     //const vue3 = this;
                    // alert('hover');
-                    element.fill({ color: '#00ff00' })
+                    element.animate(180).fill({ color: 'rgb(117, 9, 9)' })
                     this.$store.commit('setDistrict', '');
                 })
                 
@@ -89,3 +90,8 @@
 
     }
 </script>
+<style scoped>
+ .dist {
+     color: rgb(109, 106, 106)
+ }
+</style>
